@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "core17Admin": {
@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "core17Admin"
+    }
+  },
+  "defaultProject": "core17Admin",
+  "cli": {
+    "analytics": "c9970552-1120-41d4-ba80-db3c3e5894f1"
+  }
 }
