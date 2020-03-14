@@ -9,7 +9,8 @@
 export const serverConfig = {
   SERVER_URL: "http://localhost:4000",
   ADMIN_PANEL_URL: "/corepanel",
-  TEMPLATES_URL: "/tmps"
+  TEMPLATES_URL: "/tmps",
+  BASE_CONTENT_URL: "/base"
 }
 
 export const environment = {

@@ -1,0 +1,19 @@
+@import './../../../styles.scss';
+
+.base-row {
+    min-height: 100vh;
+}
+
+.menu-element {
+
+    color: $light;
+    background-color: $dark;
+    core-menu {
+        position: relative;
+    }
+}
+
+.content-element {
+    padding: 20px;
+    color: $dark;
+}

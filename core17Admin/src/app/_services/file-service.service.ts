@@ -13,8 +13,11 @@ export class FileService {
    }
 
    public getTemplates() {
-     console.log(serverConfig);
     return this.http.get(serverConfig.SERVER_URL + serverConfig.ADMIN_PANEL_URL + serverConfig.TEMPLATES_URL);
+   }
+
+   public getBase() {
+    return this.http.get(serverConfig.SERVER_URL + serverConfig.ADMIN_PANEL_URL + serverConfig.BASE_CONTENT_URL);
    }
 
 }

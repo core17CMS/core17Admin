@@ -1,1 +1,67 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+$bodyFont: 'Baloo 2', cursive;
+$headerFont: 'Montserrat', sans-serif;
+
+$light: rgb(255, 254, 250);
+$grey: rgb(150, 150, 150);
+$slate: rgb(53, 53, 53);
+$dark: rgb(27, 26, 26);
+$black: rgb(17, 16, 16);;
+
+$lightFontColor: rgb(255, 254, 250);
+$darkFontColor: rgb(27, 26, 26);
+
+
+body, html {
+    font-family: $bodyFont;
+    font-size: 16px;
+    color: $light;
+    background-color: $light;
+}
+
+
+h1 {
+    font-family: $headerFont;
+    font-size: 32px;
+    margin: 0px;
+    padding: 0px;
+}
+
+h2 {
+    font-family: $headerFont;
+    font-size: 26px;
+    margin: 0px;
+    padding: 0px;
+}
+
+h3 {
+    font-family: $headerFont;
+    font-size: 20px;
+    margin: 0px;
+    padding: 0px;
+}
+
+p {
+    &.sub {
+        font-size: 10px;
+    }
+    font-family: $bodyFont;
+    font-size: 16px;
+    margin: 0px;
+    padding: 0px
+}
+
+.light {
+    color: $light;
+}
+.grey {
+    color: $grey;
+}
+.slate {
+    color: $slate;
+}
+.dark {
+    color: $dark;
+}

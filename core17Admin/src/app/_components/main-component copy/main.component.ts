@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { FileService } from './_services/file-service.service';
+import { FileService } from '../../_services/file-service.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: 'core-main',
+  templateUrl: './main.component.html',
+  styleUrls: ['./main.component.scss']
 })
-export class AppComponent {
+export class MainComponent {
   title = 'core17Admin';
 
   constructor(private fileService: FileService) {

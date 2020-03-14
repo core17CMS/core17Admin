@@ -1,0 +1,29 @@
+@import './../../../styles.scss';
+
+.menu-container {
+    columns: $light;
+    position: fixed;
+    padding: 20px;
+    z-index: 10;
+    top: 0px;
+    left: 0;
+    min-height: 100vh;
+    .pages-list-container {
+        margin: {
+            top: 10px;
+            bottom: 10px;
+        }
+            .menu-item-list {
+        padding: {
+            top: 2px;
+            bottom: 2px;
+        }
+        margin: {
+            top: 2px;
+            bottom: 2px;
+        }
+        border-bottom: 1px solid $black;
+    }
+    }
+
+}

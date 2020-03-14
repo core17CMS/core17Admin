@@ -1,0 +1,24 @@
+<div class="menu-container">
+  <div class="row">
+    <div class="col-12">
+      <h1>CORE17</h1>
+      <p>Administrative Control Panel</p>
+      menu component
+      <div *ngIf="this.siteObject" class="pages-list-container">
+        <h3><i class="fa fa-book" aria-hidden="true"></i> Pages</h3>
+        <div *ngFor="let page of this.siteObject.pages">
+          <div class="menu-item-list">
+            <p>
+            <i *ngIf="!page.route.isStartPage" class="fa fa-file-text" aria-hidden="true"></i>
+            <i *ngIf="page.route.isStartPage" class="fa fa-star" aria-hidden="true"></i>
+            {{page.route.routeAlias}}</p>
+            <p class="sub grey"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>Page Type:{{page.type}}</p>
+          </div>
+          
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
