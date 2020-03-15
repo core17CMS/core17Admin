@@ -6,11 +6,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { MainComponent } from './_components/main-component/main.component';
 import { MenuComponent } from './_components/menu-component/menu.component';
+import { PageComponent } from './_components/page-component/page.component';
 
 @NgModule({
   declarations: [
     MainComponent,
-    MenuComponent
+    MenuComponent,
+    PageComponent
   ],
   imports: [
     BrowserModule,

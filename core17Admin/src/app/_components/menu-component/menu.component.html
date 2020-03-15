@@ -8,7 +8,7 @@
         <h3><i class="fa fa-book" aria-hidden="true"></i> Pages</h3>
         <div *ngFor="let page of this.siteObject.pages">
           <div class="menu-item-list">
-            <p>
+            <p class="route-alias-link" (click)="this.clickPageElement(page.type)">
             <i *ngIf="!page.route.isStartPage" class="fa fa-file-text" aria-hidden="true"></i>
             <i *ngIf="page.route.isStartPage" class="fa fa-star" aria-hidden="true"></i>
             {{page.route.routeAlias}}</p>

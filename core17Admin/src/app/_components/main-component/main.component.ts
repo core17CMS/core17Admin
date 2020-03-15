@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FileService } from './../../_services/file-service.service';
-import { ISite } from './../../_interfaces/ISite.interface';
+import { ISite, ISitePageObject } from './../../_interfaces/ISite.interface';
 
 @Component({
   selector: 'core-main',
@@ -11,6 +11,7 @@ export class MainComponent {
 
     public templates: any = {};
     public siteObject: ISite;
+    public selectedPageToView: ISitePageObject | boolean;
 
   constructor(private fileService: FileService) {
     this.init();
@@ -33,6 +34,15 @@ export class MainComponent {
         console.log(error);
     })
   
+}
+
+public setSelectedPage(selectedPageObject: any): void {
+  this.selectedPageToView = this.siteObject.pages.find(page => page.type === selectedPageObject.selectedPage);
+  // this.selectedPageToView = {};
+}
+
+public resetPageStates(): void {
+  this.selectedPageToView = false;
 }
 
 }
