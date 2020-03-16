@@ -3,6 +3,8 @@
         <h3>
             {{this.localPageObject.route.title}}
         </h3>
-        
+        <div *ngFor="let area of this.localPageObject.contentItems[0].areas">
+          <core-area [localAreaObject]="area"></core-area>
+        </div>
     </div>
 </div>
