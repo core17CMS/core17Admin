@@ -1,8 +1,52 @@
-<div class="row">
-    <div class="col-12">
-        <h3>
 
-        </h3>
 
+<div *ngIf="this.genericObject">
+    <div class="row">
+        <div class="col-6 element-container">
+            Element Name: {{this.genericObject.elementName}}
+        </div>
+        <div class="col-6 element-container">
+            Element Type: {{this.genericObject.type}}
+        </div>
+        <div class="col-12 element-container">
+            {{this.genericObject.genericElement.content}}
+            <textarea [(ngModel)]="this.genericObject.genericElement.content"></textarea>
+        </div>
     </div>
+</div>
+
+<div *ngIf="this.linklistObject">
+    LINKLIST_ELEMENT
+</div>
+
+<div *ngIf="this.buttonObject">
+    BUTTON_ELEMENT
+</div>
+
+<div *ngIf="this.jumbotronObject">
+    JUMBOTRON_ELEMENT
+</div>
+
+<div *ngIf="this.featureObject">
+    FEATURE_ELEMENT
+</div>
+
+<div *ngIf="this.imageObject">
+    IMAGE_ELEMENT
+</div>
+
+<div *ngIf="this.textObject">
+    TEXT_ELEMENT
+</div>
+
+<div *ngIf="this.newsObject">
+    NEWS_ELEMENT
+</div>
+
+<div *ngIf="this.blogObject">
+    BLOG_ELEMENT
+</div>
+
+<div *ngIf="this.formObject">
+    FORM_ELEMENT
 </div>

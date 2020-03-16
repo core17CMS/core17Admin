@@ -14,20 +14,25 @@ export class AreaComponent implements AfterViewInit, OnInit, OnChanges {
   constructor() {
   }
 
+//   0: "BLOG_AREA"
+// 1: "BUTTON_AREA"
+// 2: "FEATURE_AREA"
+// 3: "FOOTER_AREA"
+// 4: "GENERIC_AREA"
+// 5: "JUMBOTRON_AREA"
+// 6: "LINKLIST_AREA"
+// 7: "NEWS_AREA"
+// 8: "FORM_AREA"
+// 9: "HEADER_AREA"
+// 10: "TEXT_AREA"
+
   ngOnInit() {
     const localKeys = Object.entries(this.localAreaObject);
     for (const [key, value] of localKeys) {
-      console.log(Array.isArray(value));
+      if (Array.isArray(value)) {
+        this.areaArray = value;
+      }
     }
-    // console.log(this.localAreaObject)
-    // for (const prop in this.localAreaObject) {
-    //   console.log(this.localAreaObject.hasOwnProperty(prop));
-    //   if (Array.isArray(prop)) {
-    //
-    //     this.areaArray = prop;
-    //   }
-    // }
-    // console.log(this.areaArray);
   }
 
   ngAfterViewInit() {

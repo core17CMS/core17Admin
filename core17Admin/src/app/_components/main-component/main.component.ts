@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnChanges } from '@angular/core';
 import { FileService } from './../../_services/file-service.service';
 import { ISite, ISitePageObject } from './../../_interfaces/ISite.interface';
 
@@ -7,7 +7,7 @@ import { ISite, ISitePageObject } from './../../_interfaces/ISite.interface';
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss']
 })
-export class MainComponent {
+export class MainComponent implements OnChanges {
 
     public templates: any = {};
     public siteObject: ISite;
@@ -44,5 +44,10 @@ public setSelectedPage(selectedPageObject: any): void {
 public resetPageStates(): void {
   this.selectedPageToView = false;
 }
+
+ngOnChanges() {
+  console.log(this.siteObject);
+}
+
 
 }

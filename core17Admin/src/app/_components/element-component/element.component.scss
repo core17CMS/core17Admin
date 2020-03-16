@@ -1,0 +1,10 @@
+.element-container {
+    padding: 10px;
+    // margin: 10px;
+    border-bottom: 1px dashed #ccc;
+    background-color: rgb(253, 247, 242);
+    textarea {
+        width: 100%;
+        min-height: 200px;
+    }
+}
