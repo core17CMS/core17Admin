@@ -1,11 +1,11 @@
 <div class="row">
     <div class="col-12 area-container">
-      
+
         <h3>
         {{this.localAreaObject.areaName}}
         </h3>
         <div *ngFor="let element of this.areaArray">
-          <core-element [localElementObject]="element"></core-element>
+          <core-element [localElementObject]="element" (dataReloadRequired)="this.reloadData($event)"></core-element>
         </div>
     </div>
 </div>

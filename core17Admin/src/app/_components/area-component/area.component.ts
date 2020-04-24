@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, OnChanges, AfterViewInit, Output, EventEmitter } from '@angular/core';
+import {Component, Input, OnInit, OnChanges, AfterViewInit, Output, EventEmitter} from '@angular/core';
 import {IAreaCollective, ISitePageObject} from 'src/app/_interfaces/ISite.interface';
 
 @Component({
@@ -9,22 +9,11 @@ import {IAreaCollective, ISitePageObject} from 'src/app/_interfaces/ISite.interf
 export class AreaComponent implements AfterViewInit, OnInit, OnChanges {
 
   @Input() localAreaObject: any;
+  @Output() dataReloadRequired: EventEmitter<any> = new EventEmitter<any>();
   public areaArray: any[];
 
   constructor() {
   }
-
-//   0: "BLOG_AREA"
-// 1: "BUTTON_AREA"
-// 2: "FEATURE_AREA"
-// 3: "FOOTER_AREA"
-// 4: "GENERIC_AREA"
-// 5: "JUMBOTRON_AREA"
-// 6: "LINKLIST_AREA"
-// 7: "NEWS_AREA"
-// 8: "FORM_AREA"
-// 9: "HEADER_AREA"
-// 10: "TEXT_AREA"
 
   ngOnInit() {
     const localKeys = Object.entries(this.localAreaObject);
@@ -39,7 +28,10 @@ export class AreaComponent implements AfterViewInit, OnInit, OnChanges {
   }
 
   ngOnChanges() {
-      // console.log('localPageObject', this.localAreaObject)
+  }
+
+  public reloadData(event) {
+    this.dataReloadRequired.emit(event);
   }
 
 }

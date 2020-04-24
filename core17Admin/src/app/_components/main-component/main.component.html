@@ -1,16 +1,16 @@
 <main class="container-fluid">
   <div class="row base-row">
     <div class="col-3 menu-element">
-        <core-menu 
+        <core-menu
         [siteObject]="this.siteObject"
         (selectedPage)="this.setSelectedPage($event)"></core-menu>
     </div>
     <div class="col-9 content-element">
-      <core-page 
-        *ngIf="this.selectedPageToView" 
-        [localPageObject]="this.selectedPageToView">Loading...</core-page>
+      <core-page
+        *ngIf="this.selectedPageToView"
+        [localPageObject]="this.selectedPageToView" (dataReloadRequired)="this.reloadData($event)">Loading...</core-page>
 
-                
+
     </div>
   </div>
 </main>

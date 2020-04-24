@@ -4,7 +4,7 @@
             {{this.localPageObject.route.title}}
         </h3>
         <div *ngFor="let area of this.localPageObject.contentItems[0].areas">
-          <core-area [localAreaObject]="area"></core-area>
+          <core-area [localAreaObject]="area" (dataReloadRequired)="this.reloadData($event)"></core-area>
         </div>
     </div>
 </div>

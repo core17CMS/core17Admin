@@ -9,7 +9,7 @@ import { ISitePageObject } from 'src/app/_interfaces/ISite.interface';
 export class PageComponent implements AfterViewInit, OnInit, OnChanges {
 
   @Input() localPageObject: ISitePageObject;
-  
+  @Output() dataReloadRequired: EventEmitter<any> = new EventEmitter<any>();
 
   constructor() {
   }
@@ -21,7 +21,10 @@ export class PageComponent implements AfterViewInit, OnInit, OnChanges {
   }
 
   ngOnChanges() {
-      console.log('localPageObject', this.localPageObject)
+  }
+
+  public reloadData(event) {
+    this.dataReloadRequired.emit(event);
   }
 
 }

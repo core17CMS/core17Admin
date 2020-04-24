@@ -11,6 +11,8 @@ export interface ISite {
 export interface ISitePageObject {
   route: IRouteObject;
   type: string;
+  pageId: number;
+  order: number;
   options: ISiteOptions;
   contentItems: ISiteContentItems[];
 }
@@ -51,6 +53,8 @@ export interface IDatabaseQueryResolution {
 interface IAreaBase {
   areaName: string;
   type: string;
+  areaId: number;
+  order: number;
   options: IAreaOptions;
 }
 
@@ -132,6 +136,8 @@ export interface ITextArea extends IAreaBase {
 interface IElementBase {
   elementName: string;
   type: string;
+  elementId: number;
+  order: number;
   options: IElementOptions;
 }
 

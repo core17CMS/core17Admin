@@ -1,6 +1,18 @@
-import { IGenericElement, ILinklistElement, IButtonElement, IJumbotronElement, IFeatureElement, IImageElement, ITextElement, IBlogElement, IFormElement, INewsElement } from './../../_interfaces/ISite.interface';
-import { Component, Input, OnInit, OnChanges, AfterViewInit, Output, EventEmitter } from '@angular/core';
-import { IElementCollective } from 'src/app/_interfaces/ISite.interface';
+import {
+  IGenericElement,
+  ILinklistElement,
+  IButtonElement,
+  IJumbotronElement,
+  IFeatureElement,
+  IImageElement,
+  ITextElement,
+  IBlogElement,
+  IFormElement,
+  INewsElement
+} from './../../_interfaces/ISite.interface';
+import {Component, Input, OnInit, OnChanges, AfterViewInit, Output, EventEmitter} from '@angular/core';
+import {IElementCollective} from 'src/app/_interfaces/ISite.interface';
+import {FileService} from "../../_services/file-service.service";
 
 @Component({
   selector: 'core-element',
@@ -10,6 +22,7 @@ import { IElementCollective } from 'src/app/_interfaces/ISite.interface';
 export class ElementComponent implements AfterViewInit, OnInit, OnChanges {
 
   @Input() localElementObject: IElementCollective;
+  @Output() dataReloadRequired: EventEmitter<any> = new EventEmitter<any>();
 
   public genericObject: IGenericElement | any;
   public linklistObject: ILinklistElement | any;
@@ -22,48 +35,64 @@ export class ElementComponent implements AfterViewInit, OnInit, OnChanges {
   public formObject: IFormElement | any;
   public newsObject: INewsElement | any;
 
-  constructor() {
+  constructor(private fileService: FileService) {
+
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
-  ngAfterViewInit() {}
+  ngAfterViewInit() {
+  }
 
   ngOnChanges() {
-    switch(this.localElementObject.type) {
+    switch (this.localElementObject.type) {
       case "GENERIC_ELEMENT":
         this.genericObject = this.localElementObject;
-      break;
+        break;
       case "JUMBOTRON_ELEMENT":
         this.jumbotronObject = this.localElementObject;
-      break;
+        break;
       case "LINKLIST_ELEMENT":
         this.linklistObject = this.localElementObject;
-      break;
+        break;
       case "FEATURE_ELEMENT":
         this.featureObject = this.localElementObject;
-      break;
+        break;
       case "BUTTON_ELEMENT":
         this.buttonObject = this.localElementObject;
-      break;
+        break;
       case "IMAGE_ELEMENT":
         this.imageObject = this.localElementObject;
-      break;
+        break;
       case "TEXT_ELEMENT":
         this.textObject = this.localElementObject;
-      break;
+        break;
       case "BLOG_ELEMENT":
         this.blogObject = this.localElementObject;
-      break;
+        break;
       case "FORM_ELEMENT":
         this.formObject = this.localElementObject;
-      break;
+        break;
       case "NEWS_ELEMENT":
         this.newsObject = this.localElementObject;
-      break;
+        break;
     }
+  }
 
-      console.log('localPageObject', this.localElementObject)
+  public genericElementInputChange(event) {
+    this.genericObject.genericElement.content = event;
+  }
+
+  public saveChanges() {
+    this.fileService.updateElement(this.localElementObject).subscribe(res => {
+      if (res.status === 200) {
+        this.dataReloadRequired.emit({status: 'OK'});
+      } else {
+        this.dataReloadRequired.emit({status: 'FAILED'});
+      }
+    }, err => {
+    });
   }
 
 }

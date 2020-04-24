@@ -10,7 +10,10 @@
         </div>
         <div class="col-12 element-container">
             {{this.genericObject.genericElement.content}}
-            <textarea [(ngModel)]="this.genericObject.genericElement.content"></textarea>
+            <textarea
+              [ngModel]="this.genericObject.genericElement.content"
+              (ngModelChange)="this.genericElementInputChange($event)"></textarea>
+          <button class="btn btn-dark btn-lg btn-block" (click)="this.saveChanges()">Save</button>
         </div>
     </div>
 </div>
